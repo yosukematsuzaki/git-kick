@@ -17,12 +17,22 @@ ActiveAdmin.register Fighter do
     selectable_column
     id_column
     column :name
-    column :post_id
     column '動画数' do |fighter|
       fighter.posts.count
     end
     column :created_at
     column :updated_at
     actions
+  end
+  
+  show do |fighter|
+    attributes_table(*fighter.class.columns.collect { |column| column.name.to_sym })
+    panel "動画一覧" do
+      table_for fighter.posts do
+        column :url
+        column :created_at
+      end
+    end
+    active_admin_comments
   end
 end
