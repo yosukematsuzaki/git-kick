@@ -12,4 +12,17 @@ ActiveAdmin.register Fighter do
 #   permitted
 # end
   permit_params :name, :post_id
+  
+  index do
+    selectable_column
+    id_column
+    column :name
+    column :post_id
+    column '動画数' do |fighter|
+      fighter.posts.count
+    end
+    column :created_at
+    column :updated_at
+    actions
+  end
 end
