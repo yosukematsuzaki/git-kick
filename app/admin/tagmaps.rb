@@ -12,4 +12,12 @@ ActiveAdmin.register Tagmap do
 #   permitted
 # end
   permit_params :post_id, :tag_id
+  
+  form do |f|
+    f.inputs "Details" do
+      f.input :post, :as => :select, :member_label => :id
+      f.input :tag
+    end
+    f.actions
+  end
 end
