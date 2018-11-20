@@ -1,21 +1,30 @@
 <% @fighters.each do |fighter| %>
   <div class="contents mx-5 clearfix">
-    <h2><span class="badge badge-dark my-3">#<%= fighter.name %></span></h2>
+    <ul class="list-inline">
+      <li class="list-inline-item">
+      <h2><span class="badge badge-dark">#<%= fighter.name %></span></h2>
+      </li>
+      <% if fighter.posts.length > 3 %>
+      <li class="list-inline-item float-right mr-5 mt-4 pr-4">
+      <h4><a href="" class="text-primary" style="text-decoration: none;">もっと見る ></a></h4>
+      </li>
+      <% end %>
+    </ul>
     <% fighter.posts.limit(3).order('created_at DESC').each do |post| %>
-        <div class="card float-left mr-4" style="width:400px;">
-          <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
-          <div class="card-footer mb-0">
-            <small class="text-muted">
-              <ul class="list-inline my-auto">
-                <% post.tags.each do |tag| %>
-                <li class="list-inline-item">
-                  <h5><span class="badge badge-dark">#<%= tag.name %></span></h5>
-                </li>
-                <% end %>
-              </ul>
-            </small>
-          </div>
+      <div class="card float-left mr-4" style="width:400px;">
+        <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
+        <div class="card-footer mb-0">
+          <small class="text-muted">
+            <ul class="list-inline my-auto">
+              <% post.tags.each do |tag| %>
+              <li class="list-inline-item">
+                <h5><span class="badge badge-dark">#<%= tag.name %></span></h5>
+              </li>
+              <% end %>
+            </ul>
+          </small>
         </div>
+      </div>
     <% end %>
   </div>
 <% end %>
