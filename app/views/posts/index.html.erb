@@ -1,7 +1,7 @@
 <% @fighters.each do |fighter| %>
   <div class="contents mx-5 clearfix">
     <h2><span class="badge badge-dark my-3">#<%= fighter.name %></span></h2>
-    <% fighter.posts.each do |post| %>
+    <% fighter.posts.limit(3).order('created_at DESC').each do |post| %>
         <div class="card float-left mr-4" style="width:400px;">
           <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
           <div class="card-footer mb-0">
