@@ -4,4 +4,8 @@ class PostsController < ApplicationController
     @fighters = Fighter.all
   end
   
+  def fighter_index
+    fighter = Fighter.find(params[:id])
+    @posts = fighter.posts
+  end
 end
