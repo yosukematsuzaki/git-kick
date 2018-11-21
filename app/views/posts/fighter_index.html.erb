@@ -1,0 +1,18 @@
+<div class="contents mx-5 clearfix">
+  <% @posts.order('created_at DESC').each do |post| %>
+    <div class="card float-left mr-4" style="width:400px;">
+      <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
+      <div class="card-footer mb-0">
+        <small class="text-muted">
+          <ul class="list-inline my-auto">
+            <% post.tags.each do |tag| %>
+            <li class="list-inline-item">
+              <h5><span class="badge badge-dark">#<%= tag.name %></span></h5>
+            </li>
+            <% end %>
+          </ul>
+        </small>
+      </div>
+    </div>
+  <% end %>
+</div>
