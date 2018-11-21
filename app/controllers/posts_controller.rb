@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   end
   
   def fighter_index
-    fighter = Fighter.find(params[:id])
-    @posts = fighter.posts
+    @fighter = Fighter.find(params[:id])
+    @posts = @fighter.posts
   end
 end
