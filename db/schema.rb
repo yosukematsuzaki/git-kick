@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181122093314) do
+ActiveRecord::Schema.define(version: 20181122093525) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -58,7 +58,12 @@ ActiveRecord::Schema.define(version: 20181122093314) do
   create_table "tagmaps", force: :cascade do |t|
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "post_id",    limit: 4
+    t.integer  "tag_id",     limit: 4
   end
+
+  add_index "tagmaps", ["post_id"], name: "index_tagmaps_on_post_id", using: :btree
+  add_index "tagmaps", ["tag_id"], name: "index_tagmaps_on_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.text     "name",       limit: 65535
@@ -66,4 +71,6 @@ ActiveRecord::Schema.define(version: 20181122093314) do
     t.datetime "updated_at"
   end
 
+  add_foreign_key "tagmaps", "posts"
+  add_foreign_key "tagmaps", "tags"
 end
