@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181114092347) do
+ActiveRecord::Schema.define(version: 20181122093314) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -56,8 +56,6 @@ ActiveRecord::Schema.define(version: 20181114092347) do
   end
 
   create_table "tagmaps", force: :cascade do |t|
-    t.integer  "tag_id",     limit: 4
-    t.integer  "post_id",    limit: 4
     t.datetime "created_at"
     t.datetime "updated_at"
   end
