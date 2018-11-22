@@ -16,12 +16,12 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs 'Post登録' do
       f.input :url
-      f.input :fighter_id
+      f.input :fighter
       f.has_many :tagmaps, allow_destroy: true, heading: false,
                                 new_record: true do |ab|
         ab.input :tag_id,
                  label: 'タグ',
-                 as: :check_boxes,
+                 as: :select,
                  collection: Tag.all.map { |a| [a.name, a.id] }
       end
       f.actions
