@@ -6,16 +6,16 @@ class PostsController < ApplicationController
   
   def fighter_index
     @fighter = Fighter.find(params[:id])
-    @posts = @fighter.posts
+    @posts = @fighter.posts.order('created_at DESC')
   end
   
   def tag_index
     @tag = Tag.find(params[:id])
-    @posts = @tag.posts
+    @posts = @tag.posts.order('created_at DESC')
   end
   
   def new_index
-    @posts = Post.all
+    @posts = Post.order('created_at DESC')
   end
   
 end

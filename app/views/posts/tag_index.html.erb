@@ -1,19 +1,4 @@
 <div class="contents mx-5 clearfix">
   <p class="h4 mb-5 font-weight-bold lines-on-sides"><span>「#<%= @tag.name %>」の新着一覧</span></p>
-  <% @posts.order('created_at DESC').each do |post| %>
-    <div class="card float-left mx-3 mb-5" style="width:400px;">
-      <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
-      <div class="card-footer mb-0">
-        <small class="text-muted">
-          <ul class="list-inline my-auto">
-            <% post.tags.each do |tag| %>
-            <li class="list-inline-item">
-              <h5><span class="badge badge-dark">#<%= tag.name %></span></h5>
-            </li>
-            <% end %>
-          </ul>
-        </small>
-      </div>
-    </div>
-  <% end %>
+  <%= render :partial => "post", :collection => @posts %>
 </div>
