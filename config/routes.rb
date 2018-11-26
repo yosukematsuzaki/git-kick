@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :posts do
     member do
       get :fighter_index
+      get :tag_index
     end
   end
   

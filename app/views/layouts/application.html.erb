@@ -38,7 +38,7 @@
             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
               <ul class="mx-3 my-2 list-inline">
                 <% @tags.each do |tag| %>
-                <li class="list-inline-item"><h4 class="mb-0"><a href="#" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= tag.name %></a></h4></li>
+                <li class="list-inline-item"><h4 class="mb-0"><a href="/posts/<%= tag.id %>/tag_index" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= tag.name %></a></h4></li>
                 <% end %>
               </ul>
             </div>
