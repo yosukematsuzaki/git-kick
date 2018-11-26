@@ -26,8 +26,9 @@
             <a class="nav-link dropdown-toggle text-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;" id="DDL1">CATEGORY</a>
             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
               <ul class="mx-3 my-2 list-inline">
-                <li class="list-inline-item"><h4 class="mb-0"><a href="#" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;">ドロップダウンリンク</a></h4></li>
-                <li class="list-inline-item"><h4 class="mb-0"><a href="#" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;">ドロップダウンリンク</a></h4></li>
+                <% @fighters.each do |fighter| %>
+                <li class="list-inline-item"><h4 class="mb-0"><a href="#" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= fighter.name %></a></h4></li>
+                <% end %>
               </ul>
             </div>
           </li>
