@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @fighters = Fighter.all
+    @fighters = Fighter.order("RAND()")
   end
   
   def fighter_index
