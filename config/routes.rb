@@ -8,6 +8,9 @@ Rails.application.routes.draw do
       get :fighter_index
       get :tag_index
     end
+    collection do
+      get :new_index
+    end
   end
   
 end

@@ -14,4 +14,8 @@ class PostsController < ApplicationController
     @posts = @tag.posts
   end
   
+  def new_index
+    @posts = Post.all
+  end
+  
 end
