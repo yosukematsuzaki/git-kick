@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   
   def fighter_index
     @fighter = Fighter.find(params[:id])
-    @posts = @fighter.posts.order('created_at DESC')
+    @posts = @fighter.posts.order('created_at DESC').page(params[:page])
   end
   
   def tag_index
