@@ -1,5 +1,7 @@
-<% if (posts.offset_value + 1) != (posts.offset_value + posts.length) %>
-  <%= posts.offset_value + 1 %> - <%= posts.offset_value + posts.length %> / <%= @posts.total_count %>件
-<% elsif (posts.offset_value + 1) == (posts.offset_value + posts.length) %>
-  <%= posts.offset_value + 1 %> / <%= posts.total_count %>件
+<% if posts.total_count > 3 %>
+  <% if (posts.offset_value + 1) != (posts.offset_value + posts.length) %>
+    <%= posts.offset_value + 1 %> - <%= posts.offset_value + posts.length %> / <%= @posts.total_count %>件
+  <% elsif (posts.offset_value + 1) == (posts.offset_value + posts.length) %>
+    <%= posts.offset_value + 1 %> / <%= posts.total_count %>件
+  <% end %>
 <% end %>
