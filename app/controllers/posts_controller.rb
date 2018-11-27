@@ -11,11 +11,11 @@ class PostsController < ApplicationController
   
   def tag_index
     @tag = Tag.find(params[:id])
-    @posts = @tag.posts.order('created_at DESC')
+    @posts = @tag.posts.order('created_at DESC').page(params[:page])
   end
   
   def new_index
-    @posts = Post.order('created_at DESC')
+    @posts = Post.order('created_at DESC').page(params[:page])
   end
   
 end
