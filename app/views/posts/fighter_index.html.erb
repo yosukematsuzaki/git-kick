@@ -2,5 +2,12 @@
   <p class="h4 mb-5 font-weight-bold lines-on-sides"><span>「<%= @fighter.name %>」の新着一覧</span></p>
   <%= render :partial => "post", :collection => @posts %>
 </div>
-<%= paginate @posts %>
-<%= @posts.offset_value + 1 %> - <%= @posts.offset_value + @posts.length %> / <%= @posts.total_count %>件
+
+<ul class="list-inline mx-auto text-center" style="width:400px;">
+  <li class="list-inline-item">
+    <%= paginate @posts %>
+  </li>
+  <li class="list-inline-item">
+    <%= render :partial => "pagination", :locals => { posts: @posts } %>
+  </li>
+</ul>
