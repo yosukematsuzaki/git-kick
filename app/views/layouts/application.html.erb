@@ -57,19 +57,22 @@
   <%= yield %>
   
   <footer>
-    <nav class="navbar navbar-light bg-dark justify-content-end fixed-bottom" style="height: 116px;">
-      <ul class="list-unstyled my-auto">
+    <nav class="navbar navbar-light bg-dark justify-content-center fixed-bottom" style="height: 100px;">
+      <ul class="list-unstyled my-auto text-center">
         <li class="list-unstyled">
           <a class="navbar-brand text-danger font-weight-bold text-monospace" href="/" style="text-decoration: none;">KIX</a>
         </li>
         <li class="list-unstyled">
-          <ol class="breadcrumb bg-dark mb-0 p-0">
-            <li class="breadcrumb-item"><a class="text-danger small" href="/" style="text-decoration: none;">KIXについて</a></li>
-            <li class="breadcrumb-item text"><a class="text-danger small" href="/" style="text-decoration: none;">タグ一覧</a></li>
-          </ol>
+          <ul class="list-inline mb-1">
+            <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">このサイトについて</a></li>
+            <li class="list-inline-item text-white"> | </li>
+            <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">タグ一覧</a></li>
+            <li class="list-inline-item text-white"> | </li>
+            <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">お問い合わせ</a></li>
+          </ul>
         </li>
         <li class="list-unstyled">
-          <p class="text-white small">Copyright © 2018 KIXIENCE All Rights Reserved.</p>
+          <p class="text-white small">Copyright © 2018 KIX All Rights Reserved.</p>
         </li>
       </ul>
     </nav>
