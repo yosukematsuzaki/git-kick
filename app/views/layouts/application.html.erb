@@ -26,7 +26,7 @@
             <a class="nav-link dropdown-toggle text-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;" id="DDL1">FIGHTER</a>
             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
               <ul class="mx-3 my-2 list-inline">
-                <% @fighters.each do |fighter| %>
+                <% @get_fighters.each do |fighter| %>
                 <li class="list-inline-item"><h4 class="mb-0"><a href="/posts/<%= fighter.id %>/fighter_index" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= fighter.name %></a></h4></li>
                 <% end %>
               </ul>
@@ -37,7 +37,7 @@
             <a class="nav-link dropdown-toggle text-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;" id="DDL1">TAG</a>
             <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
               <ul class="mx-3 my-2 list-inline">
-                <% @tags.each do |tag| %>
+                <% @get_tags.each do |tag| %>
                 <li class="list-inline-item"><h4 class="mb-0"><a href="/posts/<%= tag.id %>/tag_index" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= tag.name %></a></h4></li>
                 <% end %>
               </ul>

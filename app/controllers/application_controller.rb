@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_filter :get_info
   
   def get_info
-    @fighters = Fighter.all
-    @tags = Tag.all
+    @get_fighters = Fighter.all
+    @get_tags = Tag.all
   end
 end
