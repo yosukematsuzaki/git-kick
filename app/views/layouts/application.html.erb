@@ -8,7 +8,7 @@
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     
-    <title>Kix</title>
+    <title>Kix -キックボクシング練習動画まとめサイト</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
@@ -16,7 +16,15 @@
   <body>
     <header>
       <nav class="navbar navbar-light bg-dark fixed-top">
-        <a class="navbar-brand text-danger font-weight-bold text-monospace ml-5" href="/" style="text-decoration: none;">KIX</a>
+        <ul class="list-inline mr-0 mb-0 ml-5">
+          <li class="list-inline-item">
+          <a class="navbar-brand text-danger font-weight-bold text-monospace" href="/" style="text-decoration: none;">KIX</a>
+        </li>
+        <li class="list-inline-item">
+          <h4 class="text-danger mb-0">キックボクシング練習動画まとめサイト</h4>
+        </li>
+        </ul>
+        
         <ul class="nav justify-content-end mr-5">
           <li class="nav-item my-auto mr-5">
             <a class="nav-link text-danger" href="/posts/new_index" style="text-decoration: none;">NEW</a>
