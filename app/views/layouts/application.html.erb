@@ -1,93 +1,91 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  
-    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
     <title>Kix -キックボクシング練習動画まとめサイト</title>
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <%= csrf_meta_tags %>
   </head>
+  
   <body>
     <header>
-      <nav class="navbar navbar-light bg-dark fixed-top">
-        <ul class="list-inline mr-0 mb-0 ml-5">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark fixed-top">
+        <ul class="list-inline mr-0 mb-0 offset-5 offset-lg-0 ml-lg-5">
           <li class="list-inline-item">
           <a class="navbar-brand text-danger font-weight-bold text-monospace" href="/" style="text-decoration: none;">KIX</a>
         </li>
-        <li class="list-inline-item">
+        <li class="list-inline-item d-none d-lg-inline-block">
           <h4 class="text-danger mb-0">キックボクシング練習動画まとめサイト</h4>
         </li>
         </ul>
-        
-        <ul class="nav justify-content-end mr-5">
-          <li class="nav-item my-auto mr-5">
-            <a class="nav-link text-danger" href="/posts/new_index" style="text-decoration: none;">NEW</a>
-          </li>
-          
-          <li class="nav-item dropdown my-auto mr-5 mega-dropdown">
-            <a class="nav-link dropdown-toggle text-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;" id="DDL1">FIGHTER</a>
-            <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
-              <ul class="mx-3 my-2 list-inline">
-                <% @get_fighters.each do |fighter| %>
-                <li class="list-inline-item"><h4 class="mb-0"><a href="/posts/<%= fighter.id %>/fighter_index" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= fighter.name %></a></h4></li>
-                <% end %>
-              </ul>
-            </div>
-          </li>
-          
-          <li class="nav-item dropdown my-auto mr-5 mega-dropdown">
-            <a class="nav-link dropdown-toggle text-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;" id="DDL1">TAG</a>
-            <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
-              <ul class="mx-3 my-2 list-inline">
-                <% @get_tags.each do |tag| %>
-                <li class="list-inline-item"><h4 class="mb-0"><a href="/posts/<%= tag.id %>/tag_index" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= tag.name %></a></h4></li>
-                <% end %>
-              </ul>
-            </div>
-          </li>
-          
-          <li class="nav-item">
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-danger mr-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </li>
-          
-        </ul>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#nav1" style="outline:none; box-shadow: none;">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse flex-lg-row-reverse mr-lg-5" id="nav1">
+          <ul class="navbar-nav mr-0">
+            <li class="nav-item my-auto mr-lg-5">
+              <a class="nav-link text-danger" href="/posts/new_index" style="text-decoration: none;">NEW</a>
+            </li>
+            <li class="nav-item dropdown my-auto mr-lg-5 mega-dropdown">
+              <a class="nav-link dropdown-toggle text-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;" id="DDL1">FIGHTER</a>
+              <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
+                <ul class="mx-3 my-2 list-inline">
+                  <% @get_fighters.each do |fighter| %>
+                  <li class="list-inline-item"><h4 class="mb-0"><a href="/posts/<%= fighter.id %>/fighter_index" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= fighter.name %></a></h4></li>
+                  <% end %>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item dropdown my-auto mr-lg-5 mega-dropdown">
+              <a class="nav-link dropdown-toggle text-danger" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false" style="text-decoration: none;" id="DDL1">TAG</a>
+              <div class="dropdown-menu mega-dropdown-menu" aria-labelledby="DDL1">
+                <ul class="mx-3 my-2 list-inline">
+                  <% @get_tags.each do |tag| %>
+                  <li class="list-inline-item"><h4 class="mb-0"><a href="/posts/<%= tag.id %>/tag_index" class="dropdown-badge badge text-white border border-white font-weight-normal" style="text-decoration: none;"># <%= tag.name %></a></h4></li>
+                  <% end %>
+                </ul>
+              </div>
+            </li>
+            <li class="nav-item">
+              <hr class="d-lg-none border-secondary my-2">
+              <form class="form-inline">
+                <input class="form-control mr-sm-2 my-2 my-md-0" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-danger my-2 my-md-0 mr-lg-2" type="submit">Search</button>
+              </form>
+            </li>
+          </ul>
+        </div>
       </nav>
     </header>
   
-  <%= yield %>
+    <%= yield %>
   
-  <footer style="margin-top:100px;">
-    <nav class="navbar navbar-light bg-dark justify-content-center" style="height: 100px;">
-      <ul class="list-unstyled my-auto text-center">
-        <li class="list-unstyled">
-          <a class="navbar-brand text-danger font-weight-bold text-monospace" href="/" style="text-decoration: none;">KIX</a>
-        </li>
-        <li class="list-unstyled">
-          <ul class="list-inline mb-1">
-            <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">このサイトについて</a></li>
-            <li class="list-inline-item text-white"> | </li>
-            <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">タグ一覧</a></li>
-            <li class="list-inline-item text-white"> | </li>
-            <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">お問い合わせ</a></li>
-          </ul>
-        </li>
-        <li class="list-unstyled">
-          <p class="text-white small">Copyright © 2018 KIX All Rights Reserved.</p>
-        </li>
-      </ul>
-    </nav>
-  </footer>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <footer style="margin-top:100px;">
+      <nav class="navbar navbar-light bg-dark justify-content-center" style="height: 100px;">
+        <ul class="list-unstyled my-auto text-center">
+          <li class="list-unstyled">
+            <a class="navbar-brand text-danger font-weight-bold text-monospace" href="/" style="text-decoration: none;">KIX</a>
+          </li>
+          <li class="list-unstyled">
+            <ul class="list-inline mb-1">
+              <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">このサイトについて</a></li>
+              <li class="list-inline-item text-white"> | </li>
+              <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">タグ一覧</a></li>
+              <li class="list-inline-item text-white"> | </li>
+              <li class="list-inline-item"><a class="text-danger small" href="/" style="text-decoration: none;">お問い合わせ</a></li>
+            </ul>
+          </li>
+          <li class="list-unstyled">
+            <p class="text-white small">Copyright © 2018 KIX All Rights Reserved.</p>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
