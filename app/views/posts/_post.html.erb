@@ -1,14 +1,16 @@
-<div class="card float-left mx-3 mb-5" style="width:400px;">
-  <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
-  <div class="card-footer mb-0">
-    <small class="text-muted">
-      <ul class="list-inline my-auto">
-        <% post.tags.each do |tag| %>
-          <li class="list-inline-item">
-            <h2 class="my-auto"><span class="badge badge-dark">#<%= tag.name %></span></h2>
-          </li>
-        <% end %>
-      </ul>
-    </small>
+<div class="float-lg-left col-lg-4 mb-4">
+  <div class="card">
+    <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
+    <div class="card-footer mb-0">
+      <small class="text-muted">
+        <ul class="list-inline my-auto">
+          <% post.tags.each do |tag| %>
+            <li class="list-inline-item">
+              <h2 class="my-auto"><span class="badge badge-dark">#<%= tag.name %></span></h2>
+            </li>
+          <% end %>
+        </ul>
+      </small>
+    </div>
   </div>
 </div>

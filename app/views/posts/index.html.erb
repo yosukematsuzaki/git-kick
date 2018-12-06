@@ -14,7 +14,7 @@
         </ul>
         <div class="row">
           <% fighter.posts.limit(3).order('created_at DESC').each do |post| %>
-            <div class="float-lg-left col-lg-4 mb-4 mt-lg-0">
+            <div class="float-lg-left col-lg-4 mb-4">
               <div class="card">
                 <iframe src="<%= post.url %>" frameborder="0" scrolling="no"></iframe>
                 <div class="card-footer mb-0">
