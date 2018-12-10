@@ -28,11 +28,20 @@
 .twitter-tweet {
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  width: 100% !important;
+  max-width: initial !important;
+  max-width: auto !important;
+  min-width: initial!important;
+  min-width: auto !important;
 }
 
 .instagram-media {
   margin-bottom: 0 !important;
   width: 100% !important;
+  max-width: initial !important;
+  max-width: auto !important;
+  min-width: initial !important;
+  min-width: auto !important;
 }
 
 footer {
