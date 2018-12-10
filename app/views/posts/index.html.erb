@@ -16,11 +16,11 @@
           <% fighter.posts.limit(3).order('created_at DESC').each do |post| %>
             <div class="float-lg-left col-lg-4 mb-4">
               <%= post.url.html_safe %>
-              <div class="card-footer mb-0">
+              <div class="bg-light border border-top-0">
                 <small class="text-muted">
-                  <ul class="list-inline my-auto">
+                  <ul class="list-inline py-1 px-2 mr-0 mb-0">
                     <% post.tags.each do |tag| %>
-                    <li class="list-inline-item">
+                    <li class="list-inline-item py-1">
                       <h2 class="my-auto"><span class="badge badge-dark">#<%= tag.name %></span></h2>
                     </li>
                     <% end %>
