@@ -13,4 +13,6 @@ Rails.application.routes.draw do
     end
   end
   
+  resources :fighters, only: [:index]
+  
 end

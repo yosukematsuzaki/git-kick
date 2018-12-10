@@ -1,0 +1,10 @@
+<div class="container bg-light" style="margin-top:70px; height:100vh; margin-bottom:-86px;">
+  <div class="py-md-3 px-md-5">
+    <p class="h3 font-weight-bold mb-4 text-center">選手一覧</p>
+    <ul class="my-2 mr-0 mx-md-3 list-inline">
+      <% @fighters.each do |fighter| %>
+        <li class="list-inline-item mb-2 mx-md-4"><h2 class="mb-0"><a href="/posts/<%= fighter.id %>/fighter_index" class="badge text-dark border border-dark font-weight-normal" style="text-decoration: none;"># <%= fighter.name %></a></h4></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
