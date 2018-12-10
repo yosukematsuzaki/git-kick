@@ -25,15 +25,22 @@
   box-sizing: border-box;/*←全て含めてmin-height:100vhに*/
 }
 
+.twitter-tweet {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.instagram-media {
+  margin-bottom: 0 !important;
+  width: 100% !important;
+}
+
 footer {
   width: 100%;
   position: absolute;/*←絶対位置*/
   bottom: 0; /*下に固定*/
 }
 
-iframe {
-  min-height: 430px;
-}
 
 .lines-on-sides{
   position: relative;
