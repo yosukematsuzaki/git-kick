@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181122093525) do
+ActiveRecord::Schema.define(version: 20181211091904) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 20181122093525) do
     t.text     "name",       limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "parent_id",  limit: 4
   end
 
   add_foreign_key "tagmaps", "posts"
