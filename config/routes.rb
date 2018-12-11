@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   
   resources :fighters, only: [:index]
   
+  resources :tags, only: [:index]
+  
 end
