@@ -1,0 +1,21 @@
+<div class="container bg-light" style="margin-top:70px; height:100vh; margin-bottom:-86px;">
+  <div class="py-3 px-lg-5">
+    <p class="h3 font-weight-bold mb-4 text-center">タグ一覧</p>
+    <div class="d-flex flex-column flex-wrap" style="height:90vh;">
+      <% @parents.each do |parent| %>
+        <div class="mb-1 mb-md-3 mb-lg-5 ml-lg-5">
+          <h2 class="mb-0"><a href="/posts/<%= parent.id %>/tag_index" class="badge text-dark border border-dark font-weight-normal" style="text-decoration: none;"># <%= parent.name %></a></h2>
+          <% if @tags.where(parent_id: parent.id).present? %>
+            <ul class="my-1 mr-0 ml-3 ml-md-5 list-unstyled">
+              <% @tags.where(parent_id: parent.id).each do |child| %>
+                <li class="mb-1">
+                  <h2 class="mb-0"><a href="/posts/<%= child.id %>/tag_index" class="badge text-dark border border-dark font-weight-normal" style="text-decoration: none;"># <%= child.name %></a></h2>
+                </li>
+              <% end %>
+            </ul>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
