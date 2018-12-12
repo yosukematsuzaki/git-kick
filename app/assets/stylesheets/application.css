@@ -82,7 +82,7 @@ footer {
 
 .dropdown-menu.mega-dropdown-menu.show { 
   width: 100%;
-  height: 176px;
+  min-height: 176px;
   background-color: #9b9b9b;
 }
 
