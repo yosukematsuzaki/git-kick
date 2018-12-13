@@ -13,6 +13,18 @@ ActiveAdmin.register Post do
 # end
   permit_params :url, :fighter_id, tagmaps_attributes: [:tag_id, :_destroy, :id]
   
+  index do
+    selectable_column
+    id_column
+    column :fighter
+    column 'タグ数' do |post|
+      post.tags.count
+    end
+    column :created_at
+    column :updated_at
+    actions
+  end
+  
   form do |f|
     f.inputs 'Post登録' do
       f.input :url
@@ -27,4 +39,17 @@ ActiveAdmin.register Post do
       f.actions
     end
   end
+  
+  show do |post|
+    attributes_table(*post.class.columns.collect { |column| column.name.to_sym })
+    panel "タグ一覧" do
+      table_for post.tags do
+        column :id
+        column :name
+        column :created_at
+      end
+    end
+    active_admin_comments
+  end
+  
 end
