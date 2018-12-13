@@ -4,4 +4,5 @@ class Post < ActiveRecord::Base
   has_many :tagmaps, dependent: :destroy
   
   accepts_nested_attributes_for :tagmaps, allow_destroy: true
+  validates :url, uniqueness: true
 end
