@@ -89,3 +89,13 @@ footer {
 .dropdown-badge {
   background-color: #9b9b9b;
 }
+
+.pagination a {
+  box-shadow: none;
+  background-image: none;
+  background-color: #f8f9fa;
+}
+
+.page-item.active .page-link {
+  border-color: #c7c7c7;
+}
