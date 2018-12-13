@@ -13,6 +13,22 @@ ActiveAdmin.register Tag do
 # end
   permit_params :name, :parent_id
   
+  index do
+    selectable_column
+    id_column
+    column :name
+    column 'parent_id' do |tag|
+      Tag.find_by(id: tag.parent_id)
+    end
+    column 'post数' do |tag|
+      tag.posts.count
+    end
+    column :created_at
+    column :updated_at
+    actions
+  end
+  
+
   form do |f|
     f.inputs 'Tag登録' do
       f.input :name

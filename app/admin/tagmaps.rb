@@ -13,6 +13,20 @@ ActiveAdmin.register Tagmap do
 # end
   permit_params :post_id, :tag_id
   
+  
+  index do
+    selectable_column
+    id_column
+    column :post
+    column :tag
+    column 'fighter' do |tagmaps|
+      tagmaps.post.fighter
+    end
+    column :created_at
+    column :updated_at
+    actions
+  end
+  
   form do |f|
     f.inputs "Details" do
       f.input :post, :as => :select, :member_label => :id
