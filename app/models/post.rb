@@ -5,4 +5,5 @@ class Post < ActiveRecord::Base
   
   accepts_nested_attributes_for :tagmaps, allow_destroy: true
   validates :url, uniqueness: true
+  validates :page_source, uniqueness: true
 end

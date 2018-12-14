@@ -11,7 +11,7 @@ ActiveAdmin.register Post do
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
 # end
-  permit_params :url, :fighter_id, tagmaps_attributes: [:tag_id, :_destroy, :id]
+  permit_params :url, :fighter_id, :page_source, tagmaps_attributes: [:tag_id, :_destroy, :id]
   
   index do
     selectable_column
@@ -20,6 +20,7 @@ ActiveAdmin.register Post do
     column 'タグ数' do |post|
       post.tags.count
     end
+    column :page_source
     column :created_at
     column :updated_at
     actions
@@ -28,6 +29,7 @@ ActiveAdmin.register Post do
   form do |f|
     f.inputs 'Post登録' do
       f.input :url
+      f.input :page_source
       f.input :fighter
       f.has_many :tagmaps, allow_destroy: true, heading: false,
                                 new_record: true do |ab|
