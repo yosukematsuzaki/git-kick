@@ -5,7 +5,7 @@
       <ul class="list-inline py-1 px-2 mr-0 mb-0">
         <% post.tags.each do |tag| %>
         <li class="list-inline-item py-1">
-          <h2 class="my-auto"><span class="badge badge-dark">#<%= tag.name %></span></h2>
+          <h2 class="my-auto"><a href="/posts/<%= tag.id %>/tag_index" class="badge badge-dark text-white" style="text-decoration: none;">#<%= tag.name %></a></h2>
         </li>
         <% end %>
       </ul>
